@@ -1,0 +1,7 @@
+USE SENATUR_TARDE
+
+SELECT * FROM Pacotes 
+
+SELECT * FROM TiposUsuarios
+
+SELECT * FROM Usuarios
