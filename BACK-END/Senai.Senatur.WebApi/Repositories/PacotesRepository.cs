@@ -20,6 +20,35 @@ namespace Senai.Senatur.WebApi.Repositories
                 pacotesBuscado.NomePacotes = pacotesAtualizado.NomePacotes;
             }
 
+            if (pacotesAtualizado.Descricao != null)
+            {
+                pacotesBuscado.Descricao = pacotesAtualizado.Descricao;
+            }
+
+            if (pacotesAtualizado.DataIda != null)
+            {
+                pacotesBuscado.DataIda = pacotesAtualizado.DataIda;
+            }
+
+            if (pacotesAtualizado.DataVolta != null)
+            {
+                pacotesBuscado.DataVolta = pacotesAtualizado.DataIda;
+            }
+
+            if (pacotesAtualizado.Valor != null)
+            {
+                pacotesBuscado.Valor = pacotesAtualizado.Valor;
+            }
+
+            if (pacotesAtualizado.Ativo != null)
+            {
+                pacotesBuscado.Ativo = pacotesAtualizado.Ativo;
+            }
+
+            if (pacotesAtualizado.NomeCidade != null)
+            {
+                pacotesBuscado.NomeCidade = pacotesAtualizado.NomeCidade;
+            }
 
             ctx.Update(pacotesBuscado);
             ctx.SaveChanges();

@@ -25,6 +25,7 @@ namespace Senai.Senatur.WebApi.Controller
             _pacotesRepository = new PacotesRepository();
         }
 
+        [HttpGet]
         public IActionResult Listar()
         {
             try
@@ -69,9 +70,15 @@ namespace Senai.Senatur.WebApi.Controller
         [HttpPut("{id}")]
         public IActionResult Put(Pacotes pacotesAtualizado, int id)
         {
-            _pacotesRepository.Atualizar(pacotesAtualizado, id);
+            var pacote = _pacotesRepository.BuscarPorId(id);
 
-            return NoContent();
+            if(pacote == null)
+            {
+                return NotFound("Pacote Inexistente");
+            }
+
+            _pacotesRepository.Atualizar(pacotesAtualizado,id);
+            return StatusCode(200);
         }
     }
 }
